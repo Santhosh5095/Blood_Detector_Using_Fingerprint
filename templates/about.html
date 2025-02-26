@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="icon" type="x-icon" href="{{ url_for('static', filename='images/blood_icon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="navbar">
+        <div class="title">
+            <i class="ri-find-replace-line"></i><h1>Bloodgroup Detector</h1>
+        </div>
+        <div class="links">
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('index') }}" class="blood">Detect Blood Group</a></li>
+                <li><a href="#"><button id="logout-btn" style="display: none;">Logout</button></a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="user-info">
+        <p id="username"></p>
+    </div>
+    <div class="main">
+        <div class="sidebar">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='images/blood_group_img.png') }}" alt="Logo">
+                <h2>Bloodgroup Detector</h2>
+            </div>
+            <ul>
+                <li><a href="#home"><i class="ri-home-2-line"></i> Home</a></li>
+                <li><a href="#methodology"><i class="ri-user-line"></i> Methodology</a></li>
+            </ul>
+        </div>
+        <div class="box">
+            <section id="home">
+                <div class="home">
+                    <h1>Blood Group Detection</h1>
+                    <h1>Using Fingerprint</h1>
+                </div>
+            </section>
+            <section id="methodology">
+                <div class="methodology">
+                    <h1>Methodology</h1>
+                    <p>Blood group detection using fingerprints through deep learning is an innovative approach that leverages advancements in <br>image processing and machine learning to 
+                       predict an individual's blood group based on their fingerprint patterns. Traditional methods <br> of blood group detection involve blood sample analysis, which can be 
+                       invasive, time-consuming, and require specialized equipment. <br> This novel methodology aims to provide a non-invasive, rapid, and accessible alternative by analyzing the 
+                       unique features of fingerprints.</p>
+                    <div class="steps">
+                        <img src="{{ url_for('static', filename='images/blood_group_img.png') }}" alt="blood-group-image">
+                        <div class="steps-involved">
+                            <h2>Steps Involved</h2>
+                            <p>Following Steps involved in the Development</p>
+                            <div class="matter">
+                                <div class="list-1">
+                                    <p><span>></span> Dataset: <span> Fingerprint</span></p>
+                                    <p><span>></span> Data Preprocessing: <span> Normalization with OpenCV</span></p>
+                                    <p><span>></span> Training Model: <span> CNN</span></p>
+                                    <p><span>></span> Testing Model: <span> CNN</span></p>
+                                </div>
+                                <div class="list-2">
+                                    <p><span>></span> Optimizer: <span> Adam Optimizer</span></p>
+                                    <p><span>></span> FrontEnd: <span> Flask with python</span></p>
+                                    <p><span>></span> BackEnd: <span> SQLite Server</span></p>
+                                    <p><span>></span> Accuracy: <span> 93%</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="metrics-container">
+                        <div class="metric">
+                            <i class="ri-line-chart-line"></i>
+                            <h2>93</h2>
+                            <p>Accuracy</p>
+                        </div>
+                        <div class="metric">
+                            <i class="ri-database-2-line"></i>
+                            <h2>6000</h2>
+                            <p>Dataset Size</p>
+                        </div>
+                        <div class="metric">
+                            <i class="ri-equalizer-line"></i>
+                            <h2>200</h2>
+                            <p>Epochs</p>
+                        </div>
+                        <div class="metric">
+                            <i class="ri-download-2-line"></i>
+                            <h2>1</h2>
+                            <p>Training Loss</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.sidebar a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                
+                window.scrollTo({
+                    top: targetSection.offsetTop,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+
+         // Fetch the logged-in user and update UI dynamically
+ function fetchUser() {
+    fetch('/user')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Not logged in");
+        }
+        return response.json();
+    })
+    .then(data => {
+        document.getElementById("username").textContent = "" ;
+        document.getElementById("logout-btn").style.display = "inline-block";
+    })
+    .catch(error => {
+        console.log("User not logged in:", error);
+        document.getElementById("username").innerHTML = 'Please <a href="/login">login</a> to continue.';
+    });
+}
+
+// Logout function
+document.getElementById("logout-btn").addEventListener("click", function() {
+    window.location.href = "/logout";
+});
+
+// Call fetchUser on page load
+fetchUser();
+    </script>  
+</body>
+</html>

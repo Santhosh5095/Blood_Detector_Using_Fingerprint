@@ -1,0 +1,276 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
+/*=============== BASE ===============*/
+* {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+
+    @keyframes SlideInLeft{
+        0% {
+            transform: translateY(-330px)
+        }
+        100%{
+            transform: translateX(0)
+        }
+    }  
+    .navbar {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 5rem;
+        width: 100%;
+        background: #4EA685;
+        padding: 1.5rem 5rem 1.5rem 5rem;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        z-index: 1;
+    }
+    .title{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .title i{
+        font-size: 2.8rem;
+        color: #eee;
+        margin-right: 0.5rem;
+        animation: SlideInLeft 1s ease-out 0s 1 normal;
+    }
+    .title h1{
+        color: #eee;
+        animation: SlideInLeft 1s ease-out 0s 1 normal;
+    }
+     
+    .links{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .links ul{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.3rem;
+    }
+    .links ul button{
+        animation: SlideInLeft 1s ease-out 0s 1 normal;
+    }
+    .links ul li{
+        list-style-type: none;
+    }
+    .links ul li a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: #eee;
+        font-size: 1.4rem;
+        font-weight: 800;
+        animation: SlideInLeft 1s ease-in 0s 1 normal;
+        width: 6rem;
+    }
+    .links ul li a:hover{
+        color: #000;
+        font-size: 1.1rem;
+        width: 6rem;
+    }
+
+
+/* General Page Styling */
+body {
+    display: flex;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 20rem;
+    height: 100vh;
+    background: #4EA685;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    animation: SlideInLeft 1s ease-out 0s 1 normal;
+}
+
+.sidebar .logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar .logo img {
+    margin-top: 4rem;
+    width: 9rem;
+    height: 10rem;
+}
+
+.sidebar .logo h2 {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0px 15px 20px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+.sidebar ul li a:hover {
+    /* background-color: #055c19; */
+    color: #055c19;
+}
+
+.sidebar ul li a i {
+    margin-right: 10px;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: 1;
+    position: absolute;
+    left: 20rem;
+    right: 3rem;
+    padding: 0;
+    margin: 0;
+}
+.home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 80vw;
+    animation: SlideInLeft 1s ease-out 0s 1 normal;
+}
+.home h1{
+    font-size: 3.8rem;
+    /* margin-bottom: 1rem; */
+}
+
+.methodology{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 80vw;
+}
+.methodology h1{
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+.methodology .steps{
+    margin-top: 4rem;
+    display: flex;
+    gap: 8rem;
+}
+.methodology .steps img{
+    height: 14rem;
+}
+.methodology .steps .steps-involved h2{
+    margin-bottom: 1.3rem;
+}
+.methodology .steps .steps-involved p{
+    margin-bottom: 1.3rem;
+}
+.methodology .steps .steps-involved p span{
+    font-weight: 200;
+}
+.methodology .steps .steps-involved .matter p{
+    font-weight: 700;
+}
+.methodology .steps .matter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.metrics-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7rem;  
+    padding: 20px;
+}
+
+.metric {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.metric i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #4EA685;
+}
+
+.metric h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #000;
+    margin: 0;
+}
+
+.metric p {
+    font-size: 16px;
+    color: gray;
+}
+
+
+
+
+
+#username {
+    font-size: 1.5rem;
+    animation: SlideInLeft 1s ease-out 0s 1 normal;
+}
+
+
+.navbar .links ul button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4EA685;
+    color: white;
+    border: black solid 1px;
+    border-radius: 5px;
+    font-weight: 700;
+}
+.navbar .links ul button:hover{
+    background-color: #f71a1a;
+    color: #fff;
+}
+
+.navbar .links .blood {
+    width: 15rem;
+}

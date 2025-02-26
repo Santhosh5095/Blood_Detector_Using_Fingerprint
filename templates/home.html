@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="icon" type="x-icon" href="{{ url_for('static', filename='images/blood_icon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"rel="stylesheet"/>
+</head>
+<body>
+    <div class="navbar">
+        <div class="title">
+            <i class="ri-find-replace-line"></i><h1>Bloodgroup Detector</h1>
+        </div>
+        <div class="links">
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('index') }}" class="blood">Detect Blood Group</a></li>
+                <li><a href="#"><button id="logout-btn" style="display: none;">Logout</button></a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Username and Logout (Handled via JavaScript) -->
+    <div id="user-info">
+        <p id="username"></p>
+    </div>
+    <div class="body">
+        <h1>Welcome to <span>Blood Group Detector</span></h1>
+        <h4>New way of Detecting Blood Group With Fingerprint</h4>
+        <img src="{{ url_for('static', filename='images/img1.png') }}" alt="img1">
+    </div>
+    <script>
+         // Fetch the logged-in user and update UI dynamically
+        function fetchUser() {
+            fetch('/user')
+            .then(response => {
+        if (!response.ok) {
+            throw new Error("Not logged in");
+        }
+        return response.json();
+         })
+        .then(data => {
+        document.getElementById("username").textContent = "Welcome, " + data.username + "!";
+        document.getElementById("logout-btn").style.display = "inline-block";
+        })
+        .catch(error => {
+        console.log("User not logged in:", error);
+        document.getElementById("username").innerHTML = 'Please <a href="/login">login</a> to continue.';
+        });
+        }
+
+        // Logout function
+        document.getElementById("logout-btn").addEventListener("click", function() {
+        window.location.href = "/logout";
+        });
+
+        // Call fetchUser on page load
+        fetchUser();
+    </script>
+</body>
+</html>

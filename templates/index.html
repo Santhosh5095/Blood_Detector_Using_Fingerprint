@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Group Detection</title>
+    <link rel="icon" type="x-icon" href="{{ url_for('static', filename='images/blood_icon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"rel="stylesheet"/>
+</head>
+<body>
+    <div class="navbar">
+        <div class="title">
+            <i class="ri-find-replace-line"></i><h1>Bloodgroup Detector</h1>
+        </div>
+        <div class="links">
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('index') }}" class="blood">Detect Blood Group</a></li>
+                <li><a href="#"><button id="logout-btn" style="display: none;">Logout</button></a></li>
+            </ul>
+        </div>
+    </div> <br><br>
+     <!-- Username and Logout (Handled via JavaScript) -->
+     <div id="user-info">
+        <p id="username"></p>
+    </div>
+    
+    <h2>Blood Group Detection Using Fingerprint</h2>
+
+    <img id="fingerprint-image" src="" alt="Fingerprint will appear here">
+    <br>
+
+    <button onclick="CaptureFingerprint()">Capture Fingerprint</button>
+
+    <p id="result"></p>
+</body>
+</html>
+

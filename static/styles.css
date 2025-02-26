@@ -1,0 +1,146 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
+/*=============== BASE ===============*/
+* {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
+@keyframes SlideInLeft{
+    0% {
+        transform: translateY(-330px)
+    }
+    100%{
+        transform: translateX(0)
+    }
+}  
+.navbar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+    width: 100%;
+    background: #4EA685;
+    padding: 1.5rem 5rem 1.5rem 5rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    z-index: 1;
+}
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title i{
+    font-size: 2.8rem;
+    color: #eee;
+    margin-right: 0.5rem;
+    animation: SlideInLeft 1s ease-out 0s 1 normal;
+}
+.title h1{
+    color: #eee;
+    animation: SlideInLeft 1s ease-out 0s 1 normal;
+}
+ 
+.links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.links ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.3rem;
+}
+.links ul button{
+    animation: SlideInLeft 1s ease-out 0s 1 normal;
+}
+.links ul li{
+    list-style-type: none;
+}
+.links ul li a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #eee;
+    font-size: 1.4rem;
+    font-weight: 800;
+    animation: SlideInLeft 1s ease-in 0s 1 normal;
+    width: 6rem;
+}
+.links ul li a:hover{
+    color: #000;
+    font-size: 1.1rem;
+    width: 6rem;
+
+}
+
+body {
+    text-align: center ;
+}
+
+#fingerprint-image {
+    width: 200px;
+    height: 200px;
+    border: 2px dashed #ccc;
+    margin: 20px auto;
+    display: block;
+    animation: SlideInLeft 1s ease-out 0s 1 normal;
+}
+
+.navbar .links ul button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4EA685;
+    color: white;
+    border: black solid 1px;
+    border-radius: 5px;
+    font-weight: 700;
+}
+.navbar .links ul button:hover{
+    background-color: #f71a1a;
+    color: #fff;
+}
+
+button{
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4EA685;
+    color: white;
+    border: black solid 1px;
+    border-radius: 5px;
+    font-weight: 700;
+    animation: SlideInLeft 1s ease-out 0s 1 normal;
+}
+
+button:hover {
+    background-color: #055c19;
+    color: #fff;
+}
+
+h2{
+    margin-top: 2.5rem;
+    font-size: 2.5rem;
+    animation: SlideInLeft 1s ease-out 0s 1 normal;
+}
+
+#username {
+    font-size: 1.5rem;
+    animation: SlideInLeft 1s ease-out 0s 1 normal;
+}
+
+
+.navbar .links .blood {
+    width: 15rem;
+}

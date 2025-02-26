@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="icon" type="x-icon" href="{{ url_for('static', filename='images/blood_icon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='register.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"rel="stylesheet"/>
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="navbar">
+        <div class="title">
+            <i class="ri-find-replace-line"></i><h1>Bloodgroup Detector</h1>
+        </div>
+        <div class="links">
+            <ul>
+                <li><a href="{{ url_for('login') }}">Log in</a></li>
+                <li><a href="{{ url_for('register') }}">Register</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="body">
+        <h1>Get <span>Access to Proceed</span></h1>
+        <h4>New way of Detecting Blood Group With Fingerprint</h4>
+    </div>
+    <div class="form-wrapper align-items-center">
+        <form class="form sign-up" action="{{ url_for('register') }}" method="POST">
+            <div class="input-group">
+                <i class='bx bxs-user'></i>
+                <input type="text" name="username" placeholder="Username" required>
+            </div>
+            <div class="input-group">
+                <i class='bx bx-mail-send'></i>
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="input-group">
+                <i class='bx bxs-lock-alt'></i>
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+            <button type="submit">Sign up</button>
+            <p>
+                <span>Already have an account?</span>
+                <b onclick="toggle()" class="pointer">Log in</b>
+            </p>
+        </form>
+    </div>
+</body>
+</html>
